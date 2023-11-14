@@ -6,6 +6,7 @@ import CartProduct from '../components/Pages/CartProduct.vue'
 import PaymentDelivery from '../components/Pages/PaymentDelivery.vue'
 import Contacts from '../components/Pages/Contacts.vue'
 import Registration from '../components/Pages/Registration.vue'
+import UserCabinet from '../components/Pages/UserCabinet.vue'
 
 
 const routes = [
@@ -16,6 +17,7 @@ const routes = [
     { path: '/Contacts', component: Contacts  },
     { path: '/PaymentDelivery', component: PaymentDelivery},
     { path: '/Registration', component: Registration},
+    { path: '/UserCabinet', component: UserCabinet},
   ]
   
   const router = createRouter({

@@ -26,8 +26,7 @@
         </li>
       </ul>
       <div class="flex items-center gap-2">
-        <router-link to="/" class="link-my link-my-border  relative   flex items-center font-thin gap-2 text-white hover:text-yellow-100 hover:shadow-xl" >
-
+        <router-link to="/UserCabinet" class="link-my link-my-border  relative   flex items-center font-thin gap-2 text-white hover:text-yellow-100 hover:shadow-xl" >
             <i class="fa-solid fa-door-open text-2xl"></i>
           <span>Вхід</span>
         </router-link>
