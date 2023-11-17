@@ -2,7 +2,7 @@
   <div class="basket-wrapper relative ">
     <div class="basket overflow-hidden" @click.stop>
       <div class="border-b font-semibold flex justify-center">
-        <h2 class="basket-product__title">Кошик</h2>
+        <Title>Кошик</Title>
       </div>
       <h1 class="text-3xl font-semibold flex flex-col my-3 px-4">
         <span
@@ -14,12 +14,22 @@
         <div
           class="basket-wrapper__footer  sticky top-0 bg-gray-200 p-3 flex justify-between gap-10 font-semibold items-center"
         >
+        <div class="flex gap-4">
           <button
-            class="border h-10 px-10 bg-red-500 text-white rounded-md"
+            class="border h-10 px-10 bg-red-500 text-white rounded-md hover:shadow-xl hover:bg-red-600 transition"
             @click="myStore.activeBasket = false"
           >
             Продовжити покупки
           </button>
+         <router-link to="/PlacingOrder"
+            @click="myStore.activeBasket = false"  
+            class="border h-10 px-10 bg-green-800 text-white rounded-md hover:bg-green-500 transition hover:shadow-xl flex items-center "
+          >
+
+          <i class="fa-solid fa-list-check mr-2"></i>Оформити заказ
+         </router-link>
+        </div>
+          
           <div class="flex gap-5">
             <p>Ціна: {{ calculateMaxPrice() }}</p>
             <p>Кількість товарів ({{ cartProduct.length }})</p>
@@ -29,7 +39,7 @@
           <li
               v-for="product in cartProduct"
               :key="product"
-              class="basket-product__produc flex  justify-between w-full h-full items-center px-4"
+              class="basket-product__produc flex cursor-pointer hover:shadow-xl pb-3 transition  justify-between w-full h-full items-center px-4"
             >
               <div class="flex ">
                 <p class="basket-product__image-product">
@@ -72,6 +82,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import { useStore } from "../../store/store";
+import Title from "../Title.vue";
 
 const myStore = useStore();
 
@@ -94,8 +105,8 @@ async function getProduct() {
 
 const deleteProduct = (id) => {
   cartProduct.value = cartProduct.value.filter( item => item.id != id);
-  myStore.cartProduct = cartProduct.value
-  console.log(myStore.cartProduct);
+  myStore.cartProduct = cartProduct.value.map(item => item.id)
+  console.log(cartProduct.value);
   
 };
 
@@ -114,7 +125,6 @@ const addQuantityProduct = (product) => {
 
 onMounted( () => {
   getProduct();
-  console.log(getProducts.value)
 } )
 </script>
 
@@ -189,6 +199,7 @@ onMounted( () => {
   input {
     width: 40px;
   }
+ 
 }
 .basket-product__produc-delete-btn {
   transition: 0.5s;

@@ -48,10 +48,10 @@ const aboutLink = ref([
     {title: 'Партнери' , linl: ''},
     {title: 'Договір' , linl: ''},
   ] },
-  { title: "Каталог продукції", linl: "" },
+  { title: "Каталог продукції", linl: "PageProducts" },
   { title: "Оплата і доставка", linl: "PaymentDelivery" },
   { title: "Партнери", linl: "" },
-  { title: "Новини", linl: "" },
+  { title: "Новини", linl: "News" },
   { title: "Контакти", linl: "Contacts" },
 ]);
 const activeMenuLink = ref(route)

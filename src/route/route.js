@@ -7,6 +7,10 @@ import PaymentDelivery from '../components/Pages/PaymentDelivery.vue'
 import Contacts from '../components/Pages/Contacts.vue'
 import Registration from '../components/Pages/Registration.vue'
 import UserCabinet from '../components/Pages/UserCabinet.vue'
+import PageProducts from '../components/Pages/PageProducts.vue'
+import PlacingOrder from '../components/Pages/PlacingOrder.vue'
+import OkOrder from '../components/Pages/OkOrder.vue'
+import News from '../components/Pages/News.vue'
 
 
 const routes = [
@@ -18,6 +22,10 @@ const routes = [
     { path: '/PaymentDelivery', component: PaymentDelivery},
     { path: '/Registration', component: Registration},
     { path: '/UserCabinet', component: UserCabinet},
+    { path: '/PageProducts', component: PageProducts},
+    { path: '/PlacingOrder', component: PlacingOrder},
+    { path: '/OkOrder', component: OkOrder},
+    { path: '/News', component: News},
   ]
   
   const router = createRouter({

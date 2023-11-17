@@ -22,7 +22,7 @@ const myStore = useStore()
 
 <style scoped>
 .router-view {
-  min-height: 100vh;
+  min-height: 90vh;
   background: rgb(0, 144, 44);
   background: linear-gradient(
     90deg,
